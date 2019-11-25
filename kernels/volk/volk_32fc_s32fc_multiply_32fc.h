@@ -208,17 +208,17 @@ static inline void volk_32fc_s32fc_multiply_32fc_generic(lv_32fc_t* cVector, con
     unsigned int number = num_points;
 
     // unwrap loop
-    while (number >= 8){
-      *cPtr++ = (*aPtr++) * scalar;
-      *cPtr++ = (*aPtr++) * scalar;
-      *cPtr++ = (*aPtr++) * scalar;
-      *cPtr++ = (*aPtr++) * scalar;
-      *cPtr++ = (*aPtr++) * scalar;
-      *cPtr++ = (*aPtr++) * scalar;
-      *cPtr++ = (*aPtr++) * scalar;
-      *cPtr++ = (*aPtr++) * scalar;
-      number -= 8;
-    }
+    // while (number >= 8){
+    //   *cPtr++ = (*aPtr++) * scalar;
+    //   *cPtr++ = (*aPtr++) * scalar;
+    //   *cPtr++ = (*aPtr++) * scalar;
+    //   *cPtr++ = (*aPtr++) * scalar;
+    //   *cPtr++ = (*aPtr++) * scalar;
+    //   *cPtr++ = (*aPtr++) * scalar;
+    //   *cPtr++ = (*aPtr++) * scalar;
+    //   *cPtr++ = (*aPtr++) * scalar;
+    //   number -= 8;
+    // }
 
     // clean up any remaining
     while (number-- > 0)
