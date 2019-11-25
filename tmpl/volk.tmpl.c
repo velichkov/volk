@@ -183,11 +183,20 @@ ${kern.pname} ${kern.name}   = &__${kern.name};
 
 void ${kern.name}_manual(${kern.arglist_full}, const char* impl_name)
 {
+    fprintf(stderr, "impl_name: %s\n", impl_name);
+    assert(get_machine());
+    assert(get_machine()->${kern.name}_impl_names);
+    assert(get_machine()->${kern.name}_n_impls);
+
     const int index = volk_get_index(
         get_machine()->${kern.name}_impl_names,
         get_machine()->${kern.name}_n_impls,
         impl_name
     );
+
+    fprintf(stderr, "index: %d\n", index);
+    assert(get_machine()->${kern.name}_impls[index]);
+
     get_machine()->${kern.name}_impls[index](
         ${kern.arglist_names}
     );
