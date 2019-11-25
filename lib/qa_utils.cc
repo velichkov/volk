@@ -482,7 +482,9 @@ bool run_volk_tests(volk_func_desc_t desc,
     vlen = vlen - vlen_twiddle;
     std::chrono::time_point<std::chrono::system_clock> start, end;
     std::vector<double> profile_times;
+	std::cerr<<"arch_list size: "<<arch_list.size()<<std::endl;
     for(size_t i = 0; i < arch_list.size(); i++) {
+		std::cerr<<"i:"<<i<<", arch:"<<arch_list[i]<<std::endl;
         start = std::chrono::system_clock::now();
 
         switch(both_sigs.size()) {
