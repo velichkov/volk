@@ -36,7 +36,7 @@ before_build:
 build_script:
     - cmake --build . --config Release --target INSTALL
 test_script:
-    - ctest --output-on-failure -C Release
+    - ctest -V -C Release
 after_test:
     - cd "c:\Program Files"
     - 7z a "c:\libvolk-x64-%VC_VERSION%.zip" volk
