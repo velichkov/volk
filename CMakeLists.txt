@@ -128,6 +128,8 @@ else()
     endif()
 endif()
 
+option(ENABLE_STATIC_LIBS "Enable Static Linking" False)
+
 # Orc
 option(ENABLE_ORC "Enable Orc" True)
 if(ENABLE_ORC)

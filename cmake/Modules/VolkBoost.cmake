@@ -49,6 +49,8 @@ if(MSVC)
     endif(BOOST_ALL_DYN_LINK)
 endif(MSVC)
 
+set(Boost_USE_STATIC_LIBS ${ENABLE_STATIC_LIBS})
+
 find_package(Boost "1.35" COMPONENTS ${BOOST_REQUIRED_COMPONENTS})
 
 # This does not allow us to disable specific versions. It is used

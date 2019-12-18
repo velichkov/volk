@@ -597,7 +597,12 @@ install(TARGETS volk
 #probably doesn't.
 if(ENABLE_STATIC_LIBS)
   add_library(volk_static STATIC $<TARGET_OBJECTS:volk_obj>)
-  target_link_libraries(volk_static PUBLIC ${volk_libraries} pthread)
+  if(ORC_FOUND)
+    target_link_libraries(volk_static PUBLIC ${ORC_STATIC_LIB} pthread)
+  else()
+    target_link_libraries(volk_static PUBLIC pthread)
+  endif()
+
   if(NOT MSVC)
     target_link_libraries(volk_static PUBLIC m)
   endif()
